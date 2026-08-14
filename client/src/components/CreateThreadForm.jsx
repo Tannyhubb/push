@@ -29,6 +29,7 @@ import { createThread } from "../services/threads.service";
 export default function CreateThreadForm() {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+  // After a successful POST, invalidate the cached thread list so it refetches.
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
